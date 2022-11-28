@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 // const { countDownDays } = require('../cronjob/zelela/jobs');
 
@@ -11,12 +11,11 @@ const connectDB = async () => {
     const options = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    //   useCreateIndex: true,
+      //   useCreateIndex: true,
     };
-    await mongoose.connect(dbLocal, options);
+    await mongoose.connect(dbAtlas, options);
 
     console.log(`MongoDB connected`);
-
   } catch (err) {
     console.error(err.message);
     //Exit process with failure
@@ -24,4 +23,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB ;
+module.exports = connectDB;
